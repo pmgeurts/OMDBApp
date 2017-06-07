@@ -54,10 +54,10 @@ class NetworkRequestManager {
                 temp.append(search!)
             }
         }
-//        OperationQueue.main.addOperation {
-//            onCompletion(true, temp, nil)
-//        }
-        onCompletion(true, temp, nil)
+        OperationQueue.main.addOperation {
+          onCompletion(true, temp, nil)
+        }
+//        onCompletion(true, temp, nil)
 
     }
     

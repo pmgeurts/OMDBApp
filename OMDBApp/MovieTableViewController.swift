@@ -8,8 +8,12 @@
 
 import UIKit
 
+var currentItem: Search?
+
     
     class MovieTableViewController: UITableViewController {
+        
+        var currentSelectedMoveItem: Search?
         
         var movieListItems: [Search] = []  {
             didSet {
@@ -30,7 +34,7 @@ import UIKit
             // self.clearsSelectionOnViewWillAppear = false
             
             //Search Query
-            OMDBService.searchByTitle(title: "tvn")
+            OMDBService.searchByTitle(title: "Jaws")
             
             // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
             // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -88,7 +92,57 @@ import UIKit
             
         }
         
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            currentItem = movieListItems[indexPath.row]
+            self.performSegue(withIdentifier: "movieDetailSeg", sender: self)
+            
+        }
         
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+            if segue.identifier == "movieDetailSeg" {
+                let detailView = segue.destination as! DetailTableViewController
+                detailView.currentItem = currentSelectedMoveItem
+                
+                //detailView.theItem = currentItem
+                //detailView.imageStore = imageStore
+                
+                // detailView.shopItem = currentSelectedShopItem
+                
+                // var shopItem: ShoppingItems?
+                
+                // public class ShoppingItems {
+                // public var name : String?
+                // public var price : Double?
+                // public var description : String?
+                // public var order : Int = 0
+                // public var id = NSUUID().uuidString
+                
+            }
+        }
+}
+
+/*
+
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    currentSelectedShopItem = shoppingItems[indexPath.row]
+    performSegue(withIdentifier: segues.detailViewSegue, sender: self)
+}
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == segues.detailViewSegue {
+        let detailView = segue.destination as! DetailViewController
+        detailView.shopItem = currentSelectedShopItem
+    }
+}
+*/
+
+
+
+
         /*
          // Override to support conditional editing of the table view.
          override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -134,4 +188,4 @@ import UIKit
          }
          */
         
-    }
+    

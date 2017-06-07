@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieCellTableViewCell: UITableViewCell {
 
@@ -28,8 +29,14 @@ class MovieCellTableViewCell: UITableViewCell {
     
     func setDataForTableCell(movieListItem: Search) {
         
-        
         self.movieTitle?.text = movieListItem.title
+        //let url = URL(string: movieListItem.poster!)
+        if let urlString = movieListItem.poster {
+            let url = URL(string: urlString)
+            self.moviePoster.kf.setImage(with: url)
+        }
+        
+        
         //KingFisher is needed here I think self.moviePoster?.text = movieListItem.poster
         
         
