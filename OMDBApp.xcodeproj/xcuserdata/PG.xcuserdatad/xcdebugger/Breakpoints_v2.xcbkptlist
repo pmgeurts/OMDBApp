@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OMDBApp/MovieCellTableViewCell.swift"
-            timestampString = "518527833.311949"
+            timestampString = "518532297.382967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "setDataForTableCell(movieListItem:)"
             landmarkType = "7">
          </BreakpointContent>

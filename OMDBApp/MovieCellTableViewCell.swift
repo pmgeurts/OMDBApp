@@ -30,7 +30,7 @@ class MovieCellTableViewCell: UITableViewCell {
         
         
         self.movieTitle?.text = movieListItem.title
-        //self.moviePoster?.text = movieListItem.poster
+        //KingFisher is needed here I think self.moviePoster?.text = movieListItem.poster
         
         
         //self.shoppingListImageView?.image = UIImage.init(named: "Screen1")
