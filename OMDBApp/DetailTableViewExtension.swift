@@ -18,24 +18,61 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return 4
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //enums for each case (e.g. 0, 1, 2, ...)
         switch indexPath.row {
         case detailRows.imageRow.rawValue:
-            break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+            cell.textLabel?.text = "hoi"
+            // Configure the cell..
+            
+            return cell
+            
+        case detailRows.plotRow.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+            cell.textLabel?.text = "een"
+            // Configure the cell..
+            
+            return cell
+            
+        case detailRows.imdbRow.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imdbCellID", for: indexPath) as! imdbCell
+            
+            cell.imdbIcon.image = #imageLiteral(resourceName: "imdb-2-icon")
+            //cell.textLabel?.text = "Dit zou de imdbCell moeten zijn"
+            if let votes = self.detailMovieObject?.imdbVotes {
+                cell.imdbVotes.text = "\(votes) imdb votes"
+            }
+            
+            cell.imdbRating?.text = String(describing: self.detailMovieObject?.imdbRating)
+            cell.imdbID?.text = self.detailMovieObject?.imdbID
+            
+            return cell
+            
+        case detailRows.favoriteRow.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+            cell.textLabel?.text = "een"
+            // Configure the cell..
+            
+            return cell
             
         default:
-            break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+            cell.textLabel?.text = "een"
+            // Configure the cell..
+            
+            return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = "test"
-        // Configure the cell..
-        return cell
     }
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        <#code#>
+//    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

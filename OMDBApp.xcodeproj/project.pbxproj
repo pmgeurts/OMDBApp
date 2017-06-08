@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3E681EDA6457E81EF6143195 /* Pods_OMDBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221EF317BC8EC4CE5CE86E7D /* Pods_OMDBAppTests.framework */; };
 		6F5C2D467CD899C24B9D7035 /* Pods_OMDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6371350D30B9F6CA5456027D /* Pods_OMDBAppUITests.framework */; };
+		CFEB88981EE944BA009CBDA8 /* imdbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB88961EE944BA009CBDA8 /* imdbCell.swift */; };
+		CFEB88991EE944BA009CBDA8 /* imdbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEB88971EE944BA009CBDA8 /* imdbCell.xib */; };
+		CFEB889D1EE95C8C009CBDA8 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEB889B1EE95C8C009CBDA8 /* TableViewCell.xib */; };
+		CFEB88A01EE95CD5009CBDA8 /* PlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB889E1EE95CD5009CBDA8 /* PlotCell.swift */; };
+		CFEB88A11EE95CD5009CBDA8 /* PlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEB889F1EE95CD5009CBDA8 /* PlotCell.xib */; };
 		CFF4E1ED1EE6A30E00FD659F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF4E1EC1EE6A30E00FD659F /* AppDelegate.swift */; };
 		CFF4E1F21EE6A30E00FD659F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF4E1F01EE6A30E00FD659F /* Main.storyboard */; };
 		CFF4E1F41EE6A30E00FD659F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF4E1F31EE6A30E00FD659F /* Assets.xcassets */; };
@@ -57,6 +62,11 @@
 		76E2C88AD5B598B1749A98F1 /* Pods-OMDBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDBAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OMDBAppTests/Pods-OMDBAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		772D3BA79F50FB19FEDD7836 /* Pods-OMDBAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDBAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OMDBAppTests/Pods-OMDBAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D74CF26452CDE7968E2E86A /* Pods-OMDBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OMDBAppUITests/Pods-OMDBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFEB88961EE944BA009CBDA8 /* imdbCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imdbCell.swift; sourceTree = "<group>"; };
+		CFEB88971EE944BA009CBDA8 /* imdbCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imdbCell.xib; sourceTree = "<group>"; };
+		CFEB889B1EE95C8C009CBDA8 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		CFEB889E1EE95CD5009CBDA8 /* PlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotCell.swift; sourceTree = "<group>"; };
+		CFEB889F1EE95CD5009CBDA8 /* PlotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlotCell.xib; sourceTree = "<group>"; };
 		CFF4E1E91EE6A30E00FD659F /* OMDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF4E1EC1EE6A30E00FD659F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFF4E1F11EE6A30E00FD659F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +146,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CFEB88951EE943E9009CBDA8 /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				CFF4E2451EE8471400FD659F /* DetailTableViewController.swift */,
+				CFF4E2491EE8602100FD659F /* DetailTableViewExtension.swift */,
+				CFEB889B1EE95C8C009CBDA8 /* TableViewCell.xib */,
+				CFEB889E1EE95CD5009CBDA8 /* PlotCell.swift */,
+				CFEB889F1EE95CD5009CBDA8 /* PlotCell.xib */,
+				CFEB88961EE944BA009CBDA8 /* imdbCell.swift */,
+				CFEB88971EE944BA009CBDA8 /* imdbCell.xib */,
+				CFF4E2331EE809A100FD659F /* MovieCellTableViewCell.swift */,
+				CFF4E2341EE809A100FD659F /* MovieCellTableViewCell.xib */,
+			);
+			name = "Detail View";
+			sourceTree = "<group>";
+		};
 		CFF4E1E01EE6A30D00FD659F = {
 			isa = PBXGroup;
 			children = (
@@ -162,10 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				CFF4E2311EE804DD00FD659F /* MovieTableViewController.swift */,
-				CFF4E2451EE8471400FD659F /* DetailTableViewController.swift */,
-				CFF4E2491EE8602100FD659F /* DetailTableViewExtension.swift */,
-				CFF4E2331EE809A100FD659F /* MovieCellTableViewCell.swift */,
-				CFF4E2341EE809A100FD659F /* MovieCellTableViewCell.xib */,
+				CFEB88951EE943E9009CBDA8 /* Detail View */,
 				CFF4E2281EE7E49B00FD659F /* Data layer (model) */,
 				CFF4E1EC1EE6A30E00FD659F /* AppDelegate.swift */,
 				CFF4E2291EE7EC6600FD659F /* Json4Swift_Base.swift */,
@@ -328,9 +351,12 @@
 			files = (
 				CFF4E21F1EE6B4B100FD659F /* secretKeys.plist in Resources */,
 				CFF4E1F71EE6A30E00FD659F /* LaunchScreen.storyboard in Resources */,
+				CFEB889D1EE95C8C009CBDA8 /* TableViewCell.xib in Resources */,
 				CFF4E1F41EE6A30E00FD659F /* Assets.xcassets in Resources */,
+				CFEB88A11EE95CD5009CBDA8 /* PlotCell.xib in Resources */,
 				CFF4E2361EE809A100FD659F /* MovieCellTableViewCell.xib in Resources */,
 				CFF4E1F21EE6A30E00FD659F /* Main.storyboard in Resources */,
+				CFEB88991EE944BA009CBDA8 /* imdbCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEB88A01EE95CD5009CBDA8 /* PlotCell.swift in Sources */,
 				CFF4E2461EE8471400FD659F /* DetailTableViewController.swift in Sources */,
 				CFF4E1ED1EE6A30E00FD659F /* AppDelegate.swift in Sources */,
 				CFF4E2251EE6E9EA00FD659F /* OMDBServiceClass.swift in Sources */,
@@ -501,6 +528,7 @@
 				CFF4E2351EE809A100FD659F /* MovieCellTableViewCell.swift in Sources */,
 				CFF4E2271EE6EDBB00FD659F /* NetworkRequestManager.swift in Sources */,
 				CFF4E2321EE804DD00FD659F /* MovieTableViewController.swift in Sources */,
+				CFEB88981EE944BA009CBDA8 /* imdbCell.swift in Sources */,
 				CFF4E24A1EE8602100FD659F /* DetailTableViewExtension.swift in Sources */,
 				CFF4E23C1EE83F2500FD659F /* Detail-Ratings.swift in Sources */,
 				CFF4E22B1EE7EC6600FD659F /* Json4Swift_Base.swift in Sources */,
