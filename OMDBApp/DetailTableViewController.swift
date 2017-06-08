@@ -13,6 +13,19 @@ enum detailRows: Int {
     case plotRow = 1
     case imdbRow = 2
     case favoriteRow = 3
+    
+    func positionAsInteger() -> Int {
+        switch self {
+        case .imageRow:
+            return 0
+        case .plotRow:
+            return 1
+        case .imdbRow:
+            return 2
+        case .favoriteRow:
+            return 3
+        }
+    }
 }
 
 class DetailTableViewController: UIViewController{
@@ -34,10 +47,17 @@ class DetailTableViewController: UIViewController{
         super.viewDidLoad()
         
         myTableView.rowHeight = UITableViewAutomaticDimension
-        myTableView.estimatedRowHeight = 140
+        myTableView.estimatedRowHeight = 80
         
+        
+        
+        let plotCell = UINib(nibName: "PlotCell", bundle: nil)
         let imdbCell = UINib(nibName: "imdbCell", bundle:nil)
+        
+        
         self.myTableView.register(imdbCell, forCellReuseIdentifier: "imdbCellID")
+        self.myTableView.register(plotCell, forCellReuseIdentifier: "plotCellID")
+        
         
         /*
  let nib = UINib(nibName: "MovieCellTableViewCell", bundle: nil)

@@ -13,8 +13,12 @@ var currentItem: Search?
     
     class MovieTableViewController: UITableViewController {
         
-        var currentSelectedMoveItem: Search?
         
+//---------------------
+        let searchController = UISearchController(searchResultsController: nil)
+        var currentSearchText: String = ""
+        
+        var currentSelectedMoveItem: Search?
         var movieListItems: [Search] = []  {
             didSet {
                 self.tableView.reloadData()
@@ -30,11 +34,21 @@ var currentItem: Search?
             self.tableView.register(nib, forCellReuseIdentifier: "MovieCell")
             
             
+            
+//---------------------
+            searchController.accessibilityLabel = "search"
+            searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+            searchController.dimsBackgroundDuringPresentation = false
+            definesPresentationContext = true
+            tableView.tableHeaderView = searchController.searchBar
+            searchController.searchBar.delegate = self as! UISearchBarDelegate
+            
+            
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
             
             //Search Query
-            OMDBService.searchByTitle(title: "Jaws")
+            //OMDBService.searchByTitle(title: "Jaws")
             
             // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
             // self.navigationItem.rightBarButtonItem = self.editButtonItem()

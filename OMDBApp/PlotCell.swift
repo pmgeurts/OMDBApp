@@ -10,6 +10,8 @@ import UIKit
 
 class PlotCell: UITableViewCell {
 
+    @IBOutlet weak var moviePlot: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

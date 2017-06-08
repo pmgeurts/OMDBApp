@@ -36,6 +36,7 @@ class MovieCellTableViewCell: UITableViewCell {
             self.moviePoster.kf.setImage(with: url)
         }
         
+        self.movieText?.text = movieListItem.type
         
         //KingFisher is needed here I think self.moviePoster?.text = movieListItem.poster
         

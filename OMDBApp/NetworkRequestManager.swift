@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias APIMovieResponse = (Bool, [Search]?, NSError?) -> Void
+typealias APIMovieResponse = (Bool, /*DetailObject?,*/ [Search]?, NSError?) -> Void
 
 class NetworkRequestManager {
     
@@ -29,21 +29,27 @@ class NetworkRequestManager {
                     let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as AnyObject?
                     let array = jsonObject?["Search"] as! NSArray
                     iterateSearchResults(resultArray: array, onCompletion: onCompletion)
-                    print(jsonObject!)
+                    print(jsonObject)
                 } catch let error {
                     print("error fetch: \(error)")
-                    onCompletion(false, nil, nil)
+                    onCompletion(false, nil, error as NSError)
                 }
             } else if let requestError = error {
                 print("Error fetching data: \(requestError)")
-                onCompletion(false, nil, nil)
+                onCompletion(false, nil, requestError as NSError)
             } else {
                 print("Unexpected error with the request")
-                onCompletion(false, nil, nil)
+                onCompletion(false, nil, error as! NSError)
             }
         }
         task.resume()
     }
+    
+    //New functions for movie Details
+    
+        
+    
+
 
     //What happends here?
     static func iterateSearchResults(resultArray: NSArray, onCompletion: @escaping APIMovieResponse){

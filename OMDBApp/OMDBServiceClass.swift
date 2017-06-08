@@ -34,11 +34,14 @@ class OMDBService {
 
             
             NetworkRequestManager.omdbRequest(url: searchResultByTitle) { (success, movies, error) in
-                
-                let searchResults = ["searchResults": movies]
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "searchResults"),
-                                                object: self,
-                                                userInfo: searchResults)
+                if success {
+                    let searchResults = ["searchResults": movies]
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "searchResults"),
+                                                    object: self,
+                                                    userInfo: searchResults)
+                } else {
+                    //handle the fail pass a message back to the view controller to alert the user
+                }
             }
         }
         

@@ -27,22 +27,22 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
         //enums for each case (e.g. 0, 1, 2, ...)
         switch indexPath.row {
         case detailRows.imageRow.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-            cell.textLabel?.text = "hoi"
-            // Configure the cell..
+            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
+            //cell.textLabel?.text = "hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi"
+            cell.moviePlot.text = self.detailMovieObject?.plot
             
             return cell
+            
             
         case detailRows.plotRow.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-            cell.textLabel?.text = "een"
-            // Configure the cell..
+            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
+            cell.moviePlot.text = self.detailMovieObject?.plot
             
             return cell
+            
             
         case detailRows.imdbRow.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imdbCellID", for: indexPath) as! imdbCell
-            
             cell.imdbIcon.image = #imageLiteral(resourceName: "imdb-2-icon")
             //cell.textLabel?.text = "Dit zou de imdbCell moeten zijn"
             if let votes = self.detailMovieObject?.imdbVotes {
@@ -54,25 +54,37 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
             
             return cell
             
+            
         case detailRows.favoriteRow.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-            cell.textLabel?.text = "een"
-            // Configure the cell..
+            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
+            cell.moviePlot.text = self.detailMovieObject?.plot
             
             return cell
             
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-            cell.textLabel?.text = "een"
-            // Configure the cell..
+            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
+            cell.moviePlot.text = self.detailMovieObject?.plot
             
             return cell
         }
         
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        <#code#>
-//    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.row {
+        case detailRows.imageRow.positionAsInteger():
+            return UITableViewAutomaticDimension
+        case detailRows.plotRow.positionAsInteger():
+            return UITableViewAutomaticDimension
+        case detailRows.imdbRow.positionAsInteger():
+            return UITableViewAutomaticDimension
+        default:
+            return 80
+        }
+        
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
