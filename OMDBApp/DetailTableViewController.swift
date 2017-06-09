@@ -32,16 +32,7 @@ class DetailTableViewController: UIViewController{
     
     @IBOutlet weak var myTableView: UITableView!
     
-    var currentItem: Search?
-    var detailMovieObject: DetailObject?
-    var objects = [DetailObject]() {
-        didSet{
-            
-            myTableView.reloadData()
-            
-        }
-    }
-    
+    var detailMovieObject: DetailObject?    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,10 +61,18 @@ class DetailTableViewController: UIViewController{
         //Think line below is not used
         //self.myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseId")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.myTableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        print("denit")
     }
 
 

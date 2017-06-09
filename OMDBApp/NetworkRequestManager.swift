@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias APIMovieResponse = (Bool, /*DetailObject?,*/ [Search]?, NSError?) -> Void
+typealias resultsDictionary = [String : AnyObject]
+typealias APIMovieResponse = (Bool, resultsDictionary? , NSError?) -> Void
 
 class NetworkRequestManager {
     
@@ -27,8 +28,15 @@ class NetworkRequestManager {
                 do {
 
                     let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as AnyObject?
-                    let array = jsonObject?["Search"] as! NSArray
-                    iterateSearchResults(resultArray: array, onCompletion: onCompletion)
+                    if let array = jsonObject?["Search"] as? NSArray {
+                        iterateSearchResults(resultArray: array, onCompletion: onCompletion)
+                    } else {
+                        if let moviedetail = DetailObject.init(dictionary: jsonObject as! NSDictionary) {
+                            OperationQueue.main.addOperation {
+                                onCompletion(true, ["results" : moviedetail], nil)
+                            }
+                        }
+                    }
                     print(jsonObject)
                 } catch let error {
                     print("error fetch: \(error)")
@@ -45,12 +53,7 @@ class NetworkRequestManager {
         task.resume()
     }
     
-    //New functions for movie Details
     
-        
-    
-
-
     //What happends here?
     static func iterateSearchResults(resultArray: NSArray, onCompletion: @escaping APIMovieResponse){
         var temp: [Search] = []
@@ -61,9 +64,9 @@ class NetworkRequestManager {
             }
         }
         OperationQueue.main.addOperation {
-          onCompletion(true, temp, nil)
+            onCompletion(true, ["results" : temp as AnyObject], nil)
         }
-//        onCompletion(true, temp, nil)
+        
 
     }
     
@@ -71,7 +74,7 @@ class NetworkRequestManager {
 
 
 //    private static func iterateArrayOf(searchResults: NSArray, _ onCompletion: @escaping APIMovieResponse) {
-//        var temp: [Search] = []
+//        var temp1: [DetailObject] = []
 //        for searchResult in searchResults{
 //            if let searchResult = searchResult as? [String: AnyObject] {
 //                //parse and store json response
@@ -79,5 +82,5 @@ class NetworkRequestManager {
 //                temp.append(search!)
 //            }
 //        }
-//        onCompletion(true, temp, nil)
+//        onCompletion(true, temp1, nil)
 //    }
