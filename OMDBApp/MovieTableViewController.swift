@@ -54,8 +54,9 @@ class MovieTableViewController: UITableViewController {
         // Listener
         NotificationCenter.default.addObserver(self, selector: #selector(MovieTableViewController.notifyMovieSearches), name: NSNotification.Name(rawValue: "searchResults"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(MovieTableViewController.noifyMovieDetails), name: NSNotification.Name(rawValue: "detailResults"), object: nil)
-        //self.tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(MovieTableViewController.notifyMovieDetails), name: NSNotification.Name(rawValue: "detailResults"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MovieTableViewController.notifyErrorResponse), name: NSNotification.Name(rawValue: "omdbError"), object: nil)
     }
     
     //Listener Function
@@ -65,10 +66,22 @@ class MovieTableViewController: UITableViewController {
         
     }
     
-    func noifyMovieDetails(notification: NSNotification) {
+    func notifyMovieDetails(notification: NSNotification) {
         var moviesDetailDict = notification.userInfo as! Dictionary<String, DetailObject>
         movieDetailItem = moviesDetailDict["results"]
         self.performSegue(withIdentifier: "movieDetailSeg", sender: self)
+    }
+    
+    func notifyErrorResponse(notification: NSNotification) {
+        var searchesDict: Dictionary<String,NSError> = notification.userInfo as! Dictionary<String,NSError>
+        let errorObject = searchesDict["error"]
+        let errorTitle = errorObject?.domain
+        let errorMessage = errorObject?.localizedDescription
+        
+        let alert = UIAlertController(title: errorTitle, message: errorMessage , preferredStyle: .alert) //d
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {

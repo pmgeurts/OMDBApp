@@ -12,7 +12,7 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Json4Swift_Base {
+public class ErrorResponse {
 	public var response : Bool?
 	public var error : String?
 
@@ -26,12 +26,14 @@ public class Json4Swift_Base {
 
     - returns: Array of Json4Swift_Base Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [Json4Swift_Base]
+    
+    
+    public class func modelsFromDictionaryArray(array:NSArray) -> [ErrorResponse]
     {
-        var models:[Json4Swift_Base] = []
+        var models:[ErrorResponse] = []
         for item in array
         {
-            models.append(Json4Swift_Base(dictionary: item as! NSDictionary)!)
+            models.append(ErrorResponse(dictionary: item as! NSDictionary)!)
         }
         return models
     }

@@ -41,11 +41,11 @@ class DetailTableViewController: UIViewController{
         myTableView.estimatedRowHeight = 80
         
         
-        
+        let imageCell = UINib(nibName: "ImageCell", bundle: nil)
         let plotCell = UINib(nibName: "PlotCell", bundle: nil)
         let imdbCell = UINib(nibName: "imdbCell", bundle:nil)
         
-        
+        self.myTableView.register(imageCell, forCellReuseIdentifier: "imageCellID")
         self.myTableView.register(imdbCell, forCellReuseIdentifier: "imdbCellID")
         self.myTableView.register(plotCell, forCellReuseIdentifier: "plotCellID")
         

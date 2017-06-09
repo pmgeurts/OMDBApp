@@ -11,6 +11,8 @@
 		6F5C2D467CD899C24B9D7035 /* Pods_OMDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6371350D30B9F6CA5456027D /* Pods_OMDBAppUITests.framework */; };
 		CFE2730F1EE9AA1E005F91A9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE2730E1EE9AA1E005F91A9 /* TableViewCell.xib */; };
 		CFE273111EEAB356005F91A9 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE273101EEAB356005F91A9 /* ErrorResponse.swift */; };
+		CFE273141EEAFB72005F91A9 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE273121EEAFB72005F91A9 /* ImageCell.swift */; };
+		CFE273151EEAFB72005F91A9 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE273131EEAFB72005F91A9 /* ImageCell.xib */; };
 		CFEB88981EE944BA009CBDA8 /* imdbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB88961EE944BA009CBDA8 /* imdbCell.swift */; };
 		CFEB88991EE944BA009CBDA8 /* imdbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEB88971EE944BA009CBDA8 /* imdbCell.xib */; };
 		CFEB88A01EE95CD5009CBDA8 /* PlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB889E1EE95CD5009CBDA8 /* PlotCell.swift */; };
@@ -66,6 +68,8 @@
 		7D74CF26452CDE7968E2E86A /* Pods-OMDBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OMDBAppUITests/Pods-OMDBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CFE2730E1EE9AA1E005F91A9 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		CFE273101EEAB356005F91A9 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CFE273121EEAFB72005F91A9 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		CFE273131EEAFB72005F91A9 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		CFEB88961EE944BA009CBDA8 /* imdbCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imdbCell.swift; sourceTree = "<group>"; };
 		CFEB88971EE944BA009CBDA8 /* imdbCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imdbCell.xib; sourceTree = "<group>"; };
 		CFEB889E1EE95CD5009CBDA8 /* PlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotCell.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		CF7C39E51EE9669D00AC2E1E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CFE273121EEAFB72005F91A9 /* ImageCell.swift */,
+				CFE273131EEAFB72005F91A9 /* ImageCell.xib */,
 				CFEB889E1EE95CD5009CBDA8 /* PlotCell.swift */,
 				CFEB889F1EE95CD5009CBDA8 /* PlotCell.xib */,
 				CFEB88961EE944BA009CBDA8 /* imdbCell.swift */,
@@ -215,8 +221,8 @@
 				CFEB88A21EE95E78009CBDA8 /* ViewControllerExtension.swift */,
 				CFEB88951EE943E9009CBDA8 /* Detail View */,
 				CFF4E2281EE7E49B00FD659F /* Data layer (model) */,
-				CFF4E1EC1EE6A30E00FD659F /* AppDelegate.swift */,
 				CF7C39E61EE966CD00AC2E1E /* DTO's */,
+				CFF4E1EC1EE6A30E00FD659F /* AppDelegate.swift */,
 				CFF4E1F01EE6A30E00FD659F /* Main.storyboard */,
 				CFF4E1F31EE6A30E00FD659F /* Assets.xcassets */,
 				CFF4E1F51EE6A30E00FD659F /* LaunchScreen.storyboard */,
@@ -377,6 +383,7 @@
 				CFEB88A11EE95CD5009CBDA8 /* PlotCell.xib in Resources */,
 				CFF4E2361EE809A100FD659F /* MovieCellTableViewCell.xib in Resources */,
 				CFE2730F1EE9AA1E005F91A9 /* TableViewCell.xib in Resources */,
+				CFE273151EEAFB72005F91A9 /* ImageCell.xib in Resources */,
 				CFF4E1F21EE6A30E00FD659F /* Main.storyboard in Resources */,
 				CFEB88991EE944BA009CBDA8 /* imdbCell.xib in Resources */,
 			);
@@ -547,6 +554,7 @@
 				CFF4E2251EE6E9EA00FD659F /* OMDBServiceClass.swift in Sources */,
 				CFF4E21D1EE6A75F00FD659F /* OMDBAPI.swift in Sources */,
 				CFF4E23B1EE83F2500FD659F /* Detail-Json4Swift_Base.swift in Sources */,
+				CFE273141EEAFB72005F91A9 /* ImageCell.swift in Sources */,
 				CFF4E2351EE809A100FD659F /* MovieCellTableViewCell.swift in Sources */,
 				CFE273111EEAB356005F91A9 /* ErrorResponse.swift in Sources */,
 				CFF4E2271EE6EDBB00FD659F /* NetworkRequestManager.swift in Sources */,

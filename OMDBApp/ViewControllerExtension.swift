@@ -56,7 +56,9 @@ extension MovieTableViewController: UISearchResultsUpdating, UISearchBarDelegate
             }
         }
     }
-
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("enede")
+    }
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.returnKeyType = UIReturnKeyType.done // because of the update search results automatically being fired keyboard must say done not search
         

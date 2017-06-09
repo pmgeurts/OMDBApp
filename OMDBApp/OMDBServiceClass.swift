@@ -16,13 +16,24 @@ class OMDBService {
             
             NetworkRequestManager.omdbRequest(url: searchResultByTitle) { (success,resultsDict, error) in
                 if success {
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "searchResults"),
-                                                    object: self,
-                                                    userInfo: resultsDict)
+                    OperationQueue.main.addOperation {
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "searchResults"),
+                                                        object: self,
+                                                        userInfo: resultsDict)
+                    }
                 } else {
                     //handle the fail pass a message back to the view controller to alert the user
+                    let errorResponseDict = ["error": error]
+                    OperationQueue.main.addOperation {
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "omdbError"),
+                                                        object: self,
+                                                        userInfo: errorResponseDict)
+                    }
+                    
                 }
+                
             }
+            
         }
         
     }
@@ -32,9 +43,12 @@ class OMDBService {
         let searchY = OMDBAPI.createOMDBURLWithComponents(term: .byImdbIDorTitle(title))
         NetworkRequestManager.omdbRequest(url: searchY!) { (success, resultsDict, error) in
             if success {
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "detailResults"),
-                                                object: self,
-                                                userInfo: resultsDict)
+                OperationQueue.main.addOperation {
+
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "detailResults"),
+                                                    object: self,
+                                                    userInfo: resultsDict)
+                }
             } else {
                 //handle the fail pass a message back to the view controller to alert the user
             }

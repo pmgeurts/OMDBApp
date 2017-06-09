@@ -27,9 +27,14 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
         //enums for each case (e.g. 0, 1, 2, ...)
         switch indexPath.row {
         case detailRows.imageRow.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
-            //cell.textLabel?.text = "hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi hoi"
-            cell.moviePlot.text = self.detailMovieObject?.plot
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCellID", for: indexPath) as! ImageCell
+            
+            if let urlString = detailMovieObject?.poster {
+                let url = URL(string: urlString)
+                cell.fullImage.kf.setImage(with: url)
+            }
+            
+            //cell.moviePlot.text = self.detailMovieObject?.plot
             
             return cell
             
