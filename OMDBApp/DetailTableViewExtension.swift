@@ -54,7 +54,10 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.imdbVotes.text = "\(votes) imdb votes"
             }
             
-            cell.imdbRating?.text = String(describing: self.detailMovieObject?.imdbRating)
+            if let rating = self.detailMovieObject?.imdbRating {
+                cell.imdbRating.text = "\(rating) imdb rating"
+            }
+            //cell.imdbRating?.text = self.detailMovieObject?.imdbRating
             cell.imdbID?.text = self.detailMovieObject?.imdbID
             
             return cell
@@ -76,20 +79,21 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch indexPath.row {
-        case detailRows.imageRow.positionAsInteger():
-            return UITableViewAutomaticDimension
-        case detailRows.plotRow.positionAsInteger():
-            return UITableViewAutomaticDimension
-        case detailRows.imdbRow.positionAsInteger():
-            return UITableViewAutomaticDimension
-        default:
-            return 80
-        }
-        
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        switch indexPath.row {
+//        case detailRows.imageRow.positionAsInteger():
+//            return UITableViewAutomaticDimension
+//        case detailRows.plotRow.positionAsInteger():
+//            return UITableViewAutomaticDimension
+//        case detailRows.imdbRow.positionAsInteger():
+//            return UITableViewAutomaticDimension
+//        default:
+//            return 80
+//        }
+//        
+//    }
+    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

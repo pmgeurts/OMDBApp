@@ -29,7 +29,7 @@ public class DetailObject {
 	public var poster : String?
 	public var ratings : Array<Ratings>?
 	public var metascore : Int?
-	public var imdbRating : Double?
+	public var imdbRating : String?
 	public var imdbVotes : String?
 	public var imdbID : String?
 	public var type : String?
@@ -87,7 +87,7 @@ public class DetailObject {
 		poster = dictionary["Poster"] as? String
 		if (dictionary["Ratings"] != nil) { ratings = Ratings.modelsFromDictionaryArray(array: dictionary["Ratings"] as! NSArray) }
 		metascore = dictionary["Metascore"] as? Int
-		imdbRating = dictionary["imdbRating"] as? Double
+		imdbRating = dictionary["imdbRating"] as? String
 		imdbVotes = dictionary["imdbVotes"] as? String
 		imdbID = dictionary["imdbID"] as? String
 		type = dictionary["Type"] as? String

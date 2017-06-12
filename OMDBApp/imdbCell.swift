@@ -12,8 +12,9 @@ class imdbCell: UITableViewCell {
 
     @IBOutlet weak var imdbIcon: UIImageView!
     @IBOutlet weak var imdbVotes: UILabel!
-    @IBOutlet weak var imdbID: UILabel!
     @IBOutlet weak var imdbRating: UILabel!
+    @IBOutlet weak var imdbID: UILabel!
+    
     
     override func awakeFromNib() {
         
