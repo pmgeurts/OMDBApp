@@ -17,22 +17,12 @@ extension NSError {
         }
         return false
     }
-    
-    public func createNSError(error: NSError) -> NSError {
-        if error.isNetworkConnectionError() {
-            let userInfo = [NSLocalizedDescriptionKey: "Network Issue",
-                            NSLocalizedFailureReasonErrorKey: "Network Issue",
-                            NSLocalizedRecoverySuggestionErrorKey: "Check your network connection"]
-            return NSError.init(domain: "Network Connection", code: -57, userInfo: userInfo)
-        } else {
-            return error
+ 
+    func isJSONParsingError() -> Bool {
+        if self.domain == NSCocoaErrorDomain {
+            return true
         }
-    }
-  /*
-    convenience public init?(nsError: NSError) {
-        self.init(dictionairy: ["Error" : "Other", "Response" : false])
-        standardNSError = createNSError(error: nsError)
+        return false
     }
 
- */
 }

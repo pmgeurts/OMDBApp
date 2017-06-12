@@ -16,7 +16,8 @@ public class ErrorResponse {
 	public var response : Bool?
 	public var error : String?
 
-/**
+    public var standardNSError: NSError?
+    /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
@@ -52,9 +53,33 @@ public class ErrorResponse {
 
 		response = dictionary["Response"] as? Bool
 		error = dictionary["Error"] as? String
+        let userInfo = [
+            NSLocalizedDescriptionKey: error,
+            NSLocalizedFailureReasonErrorKey: error,
+            NSLocalizedRecoverySuggestionErrorKey: "Try typing a better name"
+        ]
+
+        standardNSError = NSError.init(domain: "OMDB Error", code: -2, userInfo: userInfo)
 	}
 
-		
+    convenience public init?(nsError: NSError) {
+        self.init(dictionary: ["Error" : "Other", "Response" : false])
+        standardNSError = createNSError(error: nsError)
+    }
+    
+    public func createNSError(error: NSError) -> NSError{
+        if error.isNetworkConnectionError() || error.isJSONParsingError() {
+            let userInfo = [
+                NSLocalizedDescriptionKey: "Network Issue",
+                NSLocalizedFailureReasonErrorKey: "Network Issue",
+                NSLocalizedRecoverySuggestionErrorKey: "Connect to network"
+            ]
+            return NSError.init(domain: "Network Connection", code: -57, userInfo: userInfo)
+        } else {
+            return error
+        }
+    }
+
 /**
     Returns the dictionary representation for the current instance.
     

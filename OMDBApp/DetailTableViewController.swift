@@ -44,10 +44,12 @@ class DetailTableViewController: UIViewController{
         let imageCell = UINib(nibName: "ImageCell", bundle: nil)
         let plotCell = UINib(nibName: "PlotCell", bundle: nil)
         let imdbCell = UINib(nibName: "imdbCell", bundle:nil)
+        let defaultCell = UINib(nibName: "DefaultDetailCell", bundle:nil)
         
         self.myTableView.register(imageCell, forCellReuseIdentifier: "imageCellID")
         self.myTableView.register(imdbCell, forCellReuseIdentifier: "imdbCellID")
         self.myTableView.register(plotCell, forCellReuseIdentifier: "plotCellID")
+        self.myTableView.register(defaultCell, forCellReuseIdentifier: "defaultCell")
         
         
         /*

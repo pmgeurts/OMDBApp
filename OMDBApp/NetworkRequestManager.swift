@@ -11,6 +11,8 @@ import Foundation
 typealias resultsDictionary = [String : AnyObject]
 typealias APIMovieResponse = (Bool, resultsDictionary? , NSError?) -> Void
 
+public var standardNSError: NSError?
+
 class NetworkRequestManager {
     
     private static let session: URLSession = {
@@ -51,10 +53,11 @@ class NetworkRequestManager {
                         if let check = jsonObject?["Response"] as? String {
                             if check == "False" {
                                 let errorString = jsonObject?["Error"] as? String
-                                let error = NSError.init(domain: "OMDB Domain", code: -10, userInfo: [NSLocalizedDescriptionKey: errorString])
+                                let errorResponse = ErrorResponse.init(dictionary: jsonObject! as! NSDictionary)
+//                                let error = NSError.init(domain: "OMDB Domain", code: -10, userInfo: [NSLocalizedDescriptionKey: errorString])
                                 print(check)
 //                                OperationQueue.main.addOperation {
-                                    onCompletion(false, nil, error)
+                                    onCompletion(false, nil, errorResponse?.standardNSError)
 //                                }
 
                             } else {

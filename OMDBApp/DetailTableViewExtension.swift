@@ -27,6 +27,7 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
         //enums for each case (e.g. 0, 1, 2, ...)
         switch indexPath.row {
         case detailRows.imageRow.rawValue:
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCellID", for: indexPath) as! ImageCell
             
             if let urlString = detailMovieObject?.poster {
@@ -34,7 +35,17 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.fullImage.kf.setImage(with: url)
             }
             
-            //cell.moviePlot.text = self.detailMovieObject?.plot
+            if let ratings = self.detailMovieObject?.imdbRating {
+                cell.votes.text = "\(ratings)"
+            }
+            
+            if let urlString = detailMovieObject?.poster {
+                let url = URL(string: urlString)
+                cell.profileMovie.kf.setImage(with: url)
+            }
+            
+            cell.isUserInteractionEnabled = false
+            cell.imdbIco.image = #imageLiteral(resourceName: "imdb-2-icon")
             
             return cell
             
@@ -49,50 +60,31 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
         case detailRows.imdbRow.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imdbCellID", for: indexPath) as! imdbCell
             cell.imdbIcon.image = #imageLiteral(resourceName: "imdb-2-icon")
-            //cell.textLabel?.text = "Dit zou de imdbCell moeten zijn"
+            
             if let votes = self.detailMovieObject?.imdbVotes {
-                cell.imdbVotes.text = "\(votes) imdb votes"
+                cell.imdbVotes.text = "IMDb Votes: \(votes)"
             }
             
-            if let rating = self.detailMovieObject?.imdbRating {
-                cell.imdbRating.text = "\(rating) imdb rating"
+           // if let rating = self.detailMovieObject?.imdbRating {
+           //     cell.imdbRating.text = "IMDb Rating: \(rating)"
+           // }
+            
+            if let imdbId = self.detailMovieObject?.imdbID {
+                cell.imdbID.text = "IMDbID: \(imdbId)"
             }
-            //cell.imdbRating?.text = self.detailMovieObject?.imdbRating
-            cell.imdbID?.text = self.detailMovieObject?.imdbID
             
             return cell
             
-            
-        case detailRows.favoriteRow.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
-            cell.moviePlot.text = self.detailMovieObject?.plot
-            
-            return cell
             
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "plotCellID", for: indexPath) as! PlotCell
-            cell.moviePlot.text = self.detailMovieObject?.plot
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! DefaultDetailCell
+            //cell.moviePlot.text = ""
+           // cell.contentView.backgroundColor = UIColor(red: 245/256, green: 245/256, blue: 245/256, alpha: 0.66)
             
             return cell
         }
         
     }
-    
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        switch indexPath.row {
-//        case detailRows.imageRow.positionAsInteger():
-//            return UITableViewAutomaticDimension
-//        case detailRows.plotRow.positionAsInteger():
-//            return UITableViewAutomaticDimension
-//        case detailRows.imdbRow.positionAsInteger():
-//            return UITableViewAutomaticDimension
-//        default:
-//            return 80
-//        }
-//        
-//    }
     
     /*
      // Override to support conditional editing of the table view.
@@ -129,13 +121,4 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

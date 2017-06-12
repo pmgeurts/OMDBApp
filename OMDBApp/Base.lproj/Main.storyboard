@@ -43,9 +43,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sa3-Jb-fwn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sa3-Jb-fwn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vJp-9m-xfE" id="Vht-oT-NCG"/>
@@ -54,6 +53,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sa3-Jb-fwn" firstAttribute="leading" secondItem="gmC-ND-HwK" secondAttribute="leading" id="D0c-1O-XYo"/>
+                            <constraint firstItem="fLF-Jl-x1l" firstAttribute="top" secondItem="Sa3-Jb-fwn" secondAttribute="bottom" id="Fe8-29-PzI"/>
+                            <constraint firstItem="Sa3-Jb-fwn" firstAttribute="top" secondItem="gmC-ND-HwK" secondAttribute="top" id="ZxE-en-TgH"/>
+                            <constraint firstAttribute="trailing" secondItem="Sa3-Jb-fwn" secondAttribute="trailing" id="gKY-OI-pKy"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="Sa3-Jb-fwn" id="eGQ-Lc-kGq"/>
