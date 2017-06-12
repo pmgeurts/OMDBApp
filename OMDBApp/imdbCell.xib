@@ -19,38 +19,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-dJ-Zbg">
-                        <rect key="frame" x="8" y="8" width="47" height="47"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="47" id="8Ka-AE-YKR"/>
-                            <constraint firstAttribute="height" constant="47" id="Xpo-rT-HYX"/>
-                        </constraints>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5z9-sY-Gev">
-                        <rect key="frame" x="91" y="21" width="185" height="21.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="5z9-sY-Gev">
+                        <rect key="frame" x="40.5" y="8" width="240" height="47"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-dJ-Zbg">
+                                <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="8Ka-AE-YKR"/>
+                                    <constraint firstAttribute="height" constant="47" id="Xpo-rT-HYX"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb ID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8C-DP-VxG">
-                                <rect key="frame" x="0.0" y="4" width="90.5" height="13.5"/>
+                                <rect key="frame" x="71" y="17" width="64" height="13.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb Votes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-6Q-oWq">
-                                <rect key="frame" x="94.5" y="4" width="90.5" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="IMDb Votes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-6Q-oWq">
+                                <rect key="frame" x="159" y="17" width="81" height="13.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="BrO-Zp-saZ"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="5z9-sY-Gev" secondAttribute="bottom" constant="13" id="2H6-ew-3o5"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="5z9-sY-Gev" secondAttribute="trailing" constant="36" id="9D4-z2-bAz"/>
-                    <constraint firstItem="5z9-sY-Gev" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="Iva-IU-ZXR"/>
-                    <constraint firstItem="Gjd-dJ-Zbg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="V6E-Fh-3vn"/>
-                    <constraint firstItem="Gjd-dJ-Zbg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ZrD-Np-xz9"/>
-                    <constraint firstItem="5z9-sY-Gev" firstAttribute="leading" secondItem="Gjd-dJ-Zbg" secondAttribute="trailing" constant="36" id="zFa-Es-aWV"/>
+                    <constraint firstItem="5z9-sY-Gev" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4hb-Aa-Ioi"/>
+                    <constraint firstItem="5z9-sY-Gev" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="DIR-kN-ehh"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
