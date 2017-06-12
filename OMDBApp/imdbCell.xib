@@ -30,19 +30,13 @@
                         <rect key="frame" x="91" y="21" width="185" height="21.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb ID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8C-DP-VxG">
-                                <rect key="frame" x="0.0" y="4" width="59" height="13.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb Rating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu1-1G-DIg">
-                                <rect key="frame" x="63" y="0.0" width="59" height="21.5"/>
+                                <rect key="frame" x="0.0" y="4" width="90.5" height="13.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb Votes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-6Q-oWq">
-                                <rect key="frame" x="126" y="0.0" width="59" height="21.5"/>
+                                <rect key="frame" x="94.5" y="4" width="90.5" height="13.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,7 +56,6 @@
             <connections>
                 <outlet property="imdbID" destination="R8C-DP-VxG" id="57z-Pu-eAg"/>
                 <outlet property="imdbIcon" destination="Gjd-dJ-Zbg" id="XUa-f3-F3E"/>
-                <outlet property="imdbRating" destination="Nu1-1G-DIg" id="wVd-OQ-xLg"/>
                 <outlet property="imdbVotes" destination="56Z-6Q-oWq" id="1E3-cN-ivx"/>
             </connections>
             <point key="canvasLocation" x="32" y="-46"/>
