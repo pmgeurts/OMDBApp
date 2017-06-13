@@ -108,7 +108,9 @@ public class DetailObject {
         }
 	}
 
-		
+    convenience public init?(movie: MovieCDM){
+        self.init(dictionary: ["imdbID" : movie.imdbID , "plot" : movie.plot])
+    }
 /**
     Returns the dictionary representation for the current instance.
     

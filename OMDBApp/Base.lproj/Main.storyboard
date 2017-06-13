@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="S4Y-qp-hZ6" customClass="MovieTableViewController" customModule="OMDBApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="itC-vQ-Ug7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -71,8 +71,8 @@
         <!--Tab-Nav-Board-->
         <scene sceneID="QYD-Fy-296">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UwR-SC-WAl" userLabel="Tab-Nav-Board" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gLb-VK-Epl"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="UwR-SC-WAl" userLabel="Tab-Nav-Board" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="gLb-VK-Epl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IDc-cp-L3B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -90,7 +90,7 @@
         <!--Favourites-->
         <scene sceneID="uG1-Dd-ctI">
             <objects>
-                <tableViewController id="Jj1-fJ-AFT" userLabel="Favourites" customClass="FavTableViewController" customModule="OMDBApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Favourties" id="Jj1-fJ-AFT" userLabel="Favourites" customClass="FavTableViewController" customModule="OMDBApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rLs-oG-R3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +110,10 @@
                             <outlet property="delegate" destination="Jj1-fJ-AFT" id="P3w-he-pWb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="zoA-7E-RJv"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="Favourites" id="zoA-7E-RJv"/>
+                    <connections>
+                        <segue destination="vJp-9m-xfE" kind="show" identifier="favouriteDetail" id="J5Z-og-fc8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIc-w5-Yxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,4 +139,11 @@
             <point key="canvasLocation" x="620" y="-760.56971514242889"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Favourites" width="25" height="25"/>
+        <image name="Search" width="25" height="25"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="J5Z-og-fc8"/>
+    </inferredMetricsTieBreakers>
 </document>

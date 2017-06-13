@@ -111,7 +111,13 @@ class FavTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //create detail object with convience init here
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //pass that detail objext on here
+    }
     /*
      // Override to support rearranging the table view.
      override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
