@@ -97,15 +97,6 @@ public class DetailObject {
 		website = dictionary["Website"] as? String
 		response = dictionary["Response"] as? Bool
         
-        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
-        context.performAndWait {
-            let movieManagedObject = MovieCDM(context: context)
-            movieManagedObject.imdbID = self.imdbID
-            movieManagedObject.plot = self.plot
-            movieManagedObject.poster = self.poster
-            movieManagedObject.title = self.title
-            CoreDataManager.sharedInstance.saveContext()
-        }
 	}
 
     convenience public init?(movie: MovieCDM){

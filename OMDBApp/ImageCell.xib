@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,16 +15,16 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCellID" rowHeight="180" id="KGk-i7-Jjw" customClass="ImageCell" customModule="OMDBApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="191.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yDi-jl-FZC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                     </imageView>
                     <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-kE-Z6v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" id="qVW-lN-jow">
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" id="qVW-lN-jow">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -34,28 +35,6 @@
                                         <constraint firstAttribute="width" constant="120" id="heF-AV-sZx"/>
                                     </constraints>
                                 </imageView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cm4-NQ-XCy">
-                                    <rect key="frame" x="15" y="60" width="61" height="70.5"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgm-Xz-uPN">
-                                            <rect key="frame" x="0.0" y="0.0" width="61" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-Pu-AfQ">
-                                            <rect key="frame" x="6.5" y="22.5" width="48" height="48"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="48" id="QH7-ew-Hhg"/>
-                                                <constraint firstAttribute="width" constant="48" id="dgb-41-Zmx"/>
-                                            </constraints>
-                                            <state key="normal" backgroundImage="fav"/>
-                                            <connections>
-                                                <action selector="favIcoPush:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kja-2d-354"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-y9-iIp">
                                     <rect key="frame" x="244" y="60" width="73" height="106"/>
                                     <subviews>
@@ -72,8 +51,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yut-gE-g9n">
-                                            <rect key="frame" x="11.5" y="56" width="50.5" height="50"/>
+                                            <rect key="frame" x="11" y="56" width="51" height="50"/>
                                         </imageView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cm4-NQ-XCy">
+                                    <rect key="frame" x="15" y="60" width="61" height="14.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgm-Xz-uPN">
+                                            <rect key="frame" x="0.0" y="0.0" width="61" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </stackView>
                             </subviews>
@@ -89,6 +79,17 @@
                         </view>
                         <blurEffect style="dark"/>
                     </visualEffectView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-Pu-AfQ">
+                        <rect key="frame" x="20" y="94" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="QH7-ew-Hhg"/>
+                            <constraint firstAttribute="width" constant="48" id="dgb-41-Zmx"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="fav"/>
+                        <connections>
+                            <action selector="favIcoPush:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ccH-zI-n9A"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="yDi-jl-FZC" secondAttribute="bottom" constant="96" id="24f-Hr-KRq"/>
@@ -96,7 +97,9 @@
                     <constraint firstAttribute="bottom" secondItem="5Xk-kE-Z6v" secondAttribute="bottom" id="9Vf-oL-PVj"/>
                     <constraint firstAttribute="trailing" secondItem="5Xk-kE-Z6v" secondAttribute="trailing" id="B88-TT-tkq"/>
                     <constraint firstItem="yDi-jl-FZC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JuM-7A-vSc"/>
+                    <constraint firstItem="oYc-Pu-AfQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="86" id="M0E-mO-Kp8"/>
                     <constraint firstItem="5Xk-kE-Z6v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="brk-Dp-IFo"/>
+                    <constraint firstItem="oYc-Pu-AfQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="bux-dG-eCk"/>
                     <constraint firstItem="5Xk-kE-Z6v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ch4-tn-1vJ"/>
                     <constraint firstItem="yDi-jl-FZC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vSb-HS-UAV"/>
                 </constraints>

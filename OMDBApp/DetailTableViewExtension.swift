@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource {
+protocol saveToCoreData: class {
+    func saveDetailInfo()
+}
+
+extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource, saveToCoreData {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -30,6 +34,7 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCellID", for: indexPath) as! ImageCell
             
+            cell.delegate = self
             
             if let urlString = detailMovieObject?.poster {
                 let url = URL(string: urlString)
@@ -45,7 +50,7 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.profileMovie.kf.setImage(with: url)
             }
             
-            cell.isUserInteractionEnabled = false
+            //cell.isUserInteractionEnabled = false
             cell.imdbIco.image = #imageLiteral(resourceName: "imdb-2-icon")
             
             return cell
@@ -60,15 +65,12 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
             
         case detailRows.imdbRow.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imdbCellID", for: indexPath) as! imdbCell
+            
             cell.imdbIcon.image = #imageLiteral(resourceName: "imdb-2-icon")
             
             if let votes = self.detailMovieObject?.imdbVotes {
                 cell.imdbVotes.text = "IMDb Votes: \(votes)"
             }
-            
-           // if let rating = self.detailMovieObject?.imdbRating {
-           //     cell.imdbRating.text = "IMDb Rating: \(rating)"
-           // }
             
             if let imdbId = self.detailMovieObject?.imdbID {
                 cell.imdbID.text = "IMDbID: \(imdbId)"
@@ -86,6 +88,11 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
     }
+    
+    func saveDetailInfo() {
+        CoreDataService.saveDetailedMovie(details: detailMovieObject!)
+    }
+
     
     /*
      // Override to support conditional editing of the table view.

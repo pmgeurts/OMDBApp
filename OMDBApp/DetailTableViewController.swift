@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum detailRows: Int {
     case imageRow = 0

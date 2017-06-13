@@ -33,4 +33,16 @@ class CoreDataService {
             }
         }
     }
+    
+    static func saveDetailedMovie(details: DetailObject) {
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+        context.performAndWait {
+            let movieManagedObject = MovieCDM(context: context)
+            movieManagedObject.imdbID = details.imdbID
+            movieManagedObject.plot = details.plot
+            movieManagedObject.poster = details.poster
+            movieManagedObject.title = details.title
+            CoreDataManager.sharedInstance.saveContext()
+        }
+    }
 }

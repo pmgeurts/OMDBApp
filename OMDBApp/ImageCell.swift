@@ -10,14 +10,20 @@ import UIKit
 
 class ImageCell: UITableViewCell {
 
-    @IBAction func favIcoPush(_ sender: Any) {
-    }
+
     @IBOutlet weak var visualEffect: UIVisualEffectView!
     @IBOutlet weak var fullImage: UIImageView!
     @IBOutlet weak var profileMovie: UIImageView!
     @IBOutlet weak var votes: UILabel!
     @IBOutlet weak var imdbIco: UIImageView!
+
+    weak var delegate: saveToCoreData?
     
+    @IBAction func favIcoPush(_ sender: Any) {
+        
+        print("poep")
+        delegate?.saveDetailInfo()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
