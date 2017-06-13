@@ -29,7 +29,7 @@ class NetworkRequestManager {
     static func omdbRequest(url :URL, onCompletion: @escaping APIMovieResponse) {
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
-            
+    
             (data, response, error) -> Void in
             
             if let jsonData = data {

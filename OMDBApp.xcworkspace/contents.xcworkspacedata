@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MovieCDM+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:MovieCDM+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:OMDBApp.xcodeproj">
    </FileRef>
    <FileRef

@@ -12,6 +12,11 @@
 		CF3E72EF1EEE7FC600C27000 /* NSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E72EE1EEE7FC600C27000 /* NSErrorExtension.swift */; };
 		CF3E72F21EEEC85B00C27000 /* DefaultDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E72F01EEEC85B00C27000 /* DefaultDetailCell.swift */; };
 		CF3E72F31EEEC85B00C27000 /* DefaultDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3E72F11EEEC85B00C27000 /* DefaultDetailCell.xib */; };
+		CF3E72F61EEEDFF600C27000 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF3E72F41EEEDFF600C27000 /* CoreDataModel.xcdatamodeld */; };
+		CF3E73081EEEE13800C27000 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E73071EEEE13800C27000 /* CoreDataManager.swift */; };
+		CF3E730A1EEEE29800C27000 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E73091EEEE29800C27000 /* Constants.swift */; };
+		CF3E731F1EEEECF400C27000 /* FavTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E731E1EEEECF400C27000 /* FavTableViewController.swift */; };
+		CF82C8851EEEF9D700AD643A /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF82C8841EEEF9D700AD643A /* CoreDataService.swift */; };
 		CFE273111EEAB356005F91A9 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE273101EEAB356005F91A9 /* ErrorResponse.swift */; };
 		CFE273141EEAFB72005F91A9 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE273121EEAFB72005F91A9 /* ImageCell.swift */; };
 		CFE273151EEAFB72005F91A9 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE273131EEAFB72005F91A9 /* ImageCell.xib */; };
@@ -71,6 +76,11 @@
 		CF3E72EE1EEE7FC600C27000 /* NSErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtension.swift; sourceTree = "<group>"; };
 		CF3E72F01EEEC85B00C27000 /* DefaultDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDetailCell.swift; sourceTree = "<group>"; };
 		CF3E72F11EEEC85B00C27000 /* DefaultDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultDetailCell.xib; sourceTree = "<group>"; };
+		CF3E72F51EEEDFF600C27000 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CF3E73071EEEE13800C27000 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CF3E73091EEEE29800C27000 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF3E731E1EEEECF400C27000 /* FavTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavTableViewController.swift; sourceTree = "<group>"; };
+		CF82C8841EEEF9D700AD643A /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		CFE273101EEAB356005F91A9 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CFE273121EEAFB72005F91A9 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		CFE273131EEAFB72005F91A9 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
@@ -228,8 +238,13 @@
 				CFF4E2281EE7E49B00FD659F /* Data layer (model) */,
 				CF7C39E61EE966CD00AC2E1E /* DTO's */,
 				CFF4E1EC1EE6A30E00FD659F /* AppDelegate.swift */,
+				CF3E73071EEEE13800C27000 /* CoreDataManager.swift */,
+				CF82C8841EEEF9D700AD643A /* CoreDataService.swift */,
+				CF3E73091EEEE29800C27000 /* Constants.swift */,
 				CFF4E1F01EE6A30E00FD659F /* Main.storyboard */,
+				CF3E731E1EEEECF400C27000 /* FavTableViewController.swift */,
 				CFF4E1F31EE6A30E00FD659F /* Assets.xcassets */,
+				CF3E72F41EEEDFF600C27000 /* CoreDataModel.xcdatamodeld */,
 				CFF4E1F51EE6A30E00FD659F /* LaunchScreen.storyboard */,
 				CFF4E1F81EE6A30E00FD659F /* Info.plist */,
 				CFF4E21E1EE6B4B100FD659F /* secretKeys.plist */,
@@ -558,9 +573,11 @@
 				CFF4E2461EE8471400FD659F /* DetailTableViewController.swift in Sources */,
 				CFF4E1ED1EE6A30E00FD659F /* AppDelegate.swift in Sources */,
 				CFF4E2251EE6E9EA00FD659F /* OMDBServiceClass.swift in Sources */,
+				CF82C8851EEEF9D700AD643A /* CoreDataService.swift in Sources */,
 				CFF4E21D1EE6A75F00FD659F /* OMDBAPI.swift in Sources */,
 				CF3E72EF1EEE7FC600C27000 /* NSErrorExtension.swift in Sources */,
 				CFF4E23B1EE83F2500FD659F /* Detail-Json4Swift_Base.swift in Sources */,
+				CF3E73081EEEE13800C27000 /* CoreDataManager.swift in Sources */,
 				CF3E72F21EEEC85B00C27000 /* DefaultDetailCell.swift in Sources */,
 				CFE273141EEAFB72005F91A9 /* ImageCell.swift in Sources */,
 				CFF4E2351EE809A100FD659F /* MovieCellTableViewCell.swift in Sources */,
@@ -568,11 +585,14 @@
 				CFF4E2271EE6EDBB00FD659F /* NetworkRequestManager.swift in Sources */,
 				CFEB88A31EE95E78009CBDA8 /* ViewControllerExtension.swift in Sources */,
 				CFF4E2321EE804DD00FD659F /* MovieTableViewController.swift in Sources */,
+				CF3E72F61EEEDFF600C27000 /* CoreDataModel.xcdatamodeld in Sources */,
 				CFEB88981EE944BA009CBDA8 /* imdbCell.swift in Sources */,
 				CFF4E24A1EE8602100FD659F /* DetailTableViewExtension.swift in Sources */,
 				CFF4E23C1EE83F2500FD659F /* Detail-Ratings.swift in Sources */,
 				CFF4E22B1EE7EC6600FD659F /* Json4Swift_Base.swift in Sources */,
 				CFF4E22C1EE7EC6600FD659F /* Search.swift in Sources */,
+				CF3E731F1EEEECF400C27000 /* FavTableViewController.swift in Sources */,
+				CF3E730A1EEEE29800C27000 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GK8G8823P5;
 				INFOPLIST_FILE = OMDBApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PG.OMDBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -741,6 +762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GK8G8823P5;
 				INFOPLIST_FILE = OMDBApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PG.OMDBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -846,6 +868,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF3E72F41EEEDFF600C27000 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF3E72F51EEEDFF600C27000 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = CF3E72F51EEEDFF600C27000 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFF4E1E11EE6A30D00FD659F /* Project object */;
 }

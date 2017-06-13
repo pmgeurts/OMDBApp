@@ -30,6 +30,7 @@ extension DetailTableViewController: UITableViewDelegate, UITableViewDataSource 
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCellID", for: indexPath) as! ImageCell
             
+            
             if let urlString = detailMovieObject?.poster {
                 let url = URL(string: urlString)
                 cell.fullImage.kf.setImage(with: url)

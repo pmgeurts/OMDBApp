@@ -35,27 +35,26 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cm4-NQ-XCy">
-                                    <rect key="frame" x="4" y="60" width="72" height="70.5"/>
+                                    <rect key="frame" x="15" y="60" width="61" height="70.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgm-Xz-uPN">
-                                            <rect key="frame" x="5.5" y="0.0" width="61" height="14.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="61" height="14.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-ZE-ozP">
-                                            <rect key="frame" x="12" y="22.5" width="48" height="48"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-Pu-AfQ">
+                                            <rect key="frame" x="6.5" y="22.5" width="48" height="48"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="HS1-gU-Wff"/>
-                                                <constraint firstAttribute="width" constant="48" id="bRh-MO-3X2"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="rrQ-Ma-bcY"/>
-                                                <constraint firstAttribute="height" constant="48" id="yaD-w8-lq5"/>
+                                                <constraint firstAttribute="height" constant="48" id="QH7-ew-Hhg"/>
+                                                <constraint firstAttribute="width" constant="48" id="dgb-41-Zmx"/>
                                             </constraints>
-                                        </imageView>
+                                            <state key="normal" backgroundImage="fav"/>
+                                            <connections>
+                                                <action selector="favIcoPush:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kja-2d-354"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="TEO-Nm-JvJ"/>
-                                    </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-y9-iIp">
                                     <rect key="frame" x="244" y="60" width="73" height="106"/>
@@ -112,4 +111,7 @@
             <point key="canvasLocation" x="33" y="144"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="fav" width="86" height="86"/>
+    </resources>
 </document>

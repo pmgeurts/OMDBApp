@@ -1,4 +1,4 @@
-/* 
+/*
 Copyright (c) 2017 Swift Models Generated from JSON powered by http://www.json4swift.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -9,7 +9,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 import Foundation
- 
+import CoreData
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class DetailObject {
@@ -96,6 +96,16 @@ public class DetailObject {
 		production = dictionary["Production"] as? String
 		website = dictionary["Website"] as? String
 		response = dictionary["Response"] as? Bool
+        
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+        context.performAndWait {
+            let movieManagedObject = MovieCDM(context: context)
+            movieManagedObject.imdbID = self.imdbID
+            movieManagedObject.plot = self.plot
+            movieManagedObject.poster = self.poster
+            movieManagedObject.title = self.title
+            CoreDataManager.sharedInstance.saveContext()
+        }
 	}
 
 		
