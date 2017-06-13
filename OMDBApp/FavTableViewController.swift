@@ -10,6 +10,7 @@ import UIKit
 
 class FavTableViewController: UITableViewController {
     
+    var movie: MovieCDM?
     var movies: [MovieCDM] = [] {
         didSet{
             self.tableView.reloadData()
@@ -112,11 +113,23 @@ class FavTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //create detail object with convience init here
+        //create detail object with convience init here = Ben
+        movie = movies[indexPath.row]
+        self.performSegue(withIdentifier: "favouriteDetail", sender: self)
+        //        currentItem = movieListItems[indexPath.row]
+        //        OMDBService.searchByID(title: (currentItem?.imdbID)!)
     }
     
+    // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //pass that detail objext on here
+        //pass that detail objext on here = Ben
+        if segue.identifier == "favouriteDetail" {
+            let detailView = segue.destination as! DetailTableViewController
+            detailView.detailMovieObject = DetailObject.init(movie: movie!)
+
+            
+        }
     }
     /*
      // Override to support rearranging the table view.
@@ -132,15 +145,6 @@ class FavTableViewController: UITableViewController {
      return true
      }
      */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+  
     
 }

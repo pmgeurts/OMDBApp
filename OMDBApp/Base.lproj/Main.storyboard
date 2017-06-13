@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imt-dW-gaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3248.8000000000002" y="-760.56971514242889"/>
+            <point key="canvasLocation" x="3196" y="-309"/>
         </scene>
         <!--Tab-Nav-Board-->
         <scene sceneID="QYD-Fy-296">
@@ -95,9 +95,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="feN-v3-Joe">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="9fa-rW-FkI">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9fa-rW-FkI" id="VtP-ir-Qe8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -110,14 +117,14 @@
                             <outlet property="delegate" destination="Jj1-fJ-AFT" id="P3w-he-pWb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favourites" image="Favourites" id="zoA-7E-RJv"/>
+                    <navigationItem key="navigationItem" id="rFc-un-OfE"/>
                     <connections>
                         <segue destination="vJp-9m-xfE" kind="show" identifier="favouriteDetail" id="J5Z-og-fc8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIc-w5-Yxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="-5"/>
+            <point key="canvasLocation" x="2415" y="107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YPn-3Z-bMe">
@@ -131,12 +138,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="UwR-SC-WAl" kind="relationship" relationship="viewControllers" id="2LR-fq-LNM"/>
-                        <segue destination="Jj1-fJ-AFT" kind="relationship" relationship="viewControllers" id="ZGz-F5-wmF"/>
+                        <segue destination="5mc-i9-f0R" kind="relationship" relationship="viewControllers" id="ZGz-F5-wmF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCE-fE-8R1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="620" y="-760.56971514242889"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="xXX-D2-jeM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5mc-i9-f0R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="Favourites" id="zoA-7E-RJv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yv8-xU-ZeU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jj1-fJ-AFT" kind="relationship" relationship="rootViewController" id="bie-1W-i9b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZR-4X-Xbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="107"/>
         </scene>
     </scenes>
     <resources>

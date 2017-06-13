@@ -41,7 +41,6 @@ class DetailTableViewController: UIViewController{
         myTableView.rowHeight = UITableViewAutomaticDimension
         myTableView.estimatedRowHeight = 80
         
-        
         let imageCell = UINib(nibName: "ImageCell", bundle: nil)
         let plotCell = UINib(nibName: "PlotCell", bundle: nil)
         let imdbCell = UINib(nibName: "imdbCell", bundle:nil)
@@ -51,18 +50,10 @@ class DetailTableViewController: UIViewController{
         self.myTableView.register(imdbCell, forCellReuseIdentifier: "imdbCellID")
         self.myTableView.register(plotCell, forCellReuseIdentifier: "plotCellID")
         self.myTableView.register(defaultCell, forCellReuseIdentifier: "defaultCell")
-        
-        
-        /*
- let nib = UINib(nibName: "MovieCellTableViewCell", bundle: nil)
- self.tableView.register(nib, forCellReuseIdentifier: "MovieCell")
- */
  
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
         
-        //Think line below is not used
-        //self.myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseId")
     }
     
     override func viewWillAppear(_ animated: Bool) {

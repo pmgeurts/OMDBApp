@@ -116,6 +116,8 @@ class MovieTableViewController: UITableViewController {
         OMDBService.searchByID(title: (currentItem?.imdbID)!)
         
     }
+
+     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     // Get the new view controller using segue.destinationViewController.
@@ -132,23 +134,6 @@ class MovieTableViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self)
     }
 }
-
-/*
- 
- override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
- currentSelectedShopItem = shoppingItems[indexPath.row]
- performSegue(withIdentifier: segues.detailViewSegue, sender: self)
- }
- 
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- if segue.identifier == segues.detailViewSegue {
- let detailView = segue.destination as! DetailViewController
- detailView.shopItem = currentSelectedShopItem
- }
- }
- */
-
-
 
 
 /*
@@ -186,14 +171,8 @@ class MovieTableViewController: UITableViewController {
  }
  */
 
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
+
+
+
 
 
